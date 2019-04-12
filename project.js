@@ -41,7 +41,7 @@ imgarr[4]={
 			};	
 imgarr[5]={
             image: new Image(),
-			src: "Wardrobe.png",
+			src: "wardrobe.png",
 			caption: "Kleiderschrank"
 			};
 imgarr[6]={
