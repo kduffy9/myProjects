@@ -1,0 +1,105 @@
+body  {
+        background-color: #ffffff;
+        margin:0;
+	    font-size:100%;
+      }	
+*      {
+        box-sizing: border-box;
+       }
+#home { 
+        margin-top:0;
+		width:100%;
+		height:15%;
+        padding:0;
+		background:#0277BD;
+		background:-webkit-linear-gradient(#0277BD,#E1F5FE;)
+		background:-o-linear-gradient(#0277BD,#E1F5FE);
+		background:-moz-linear-gradient(#0277BD,#E1F5FE);
+		background:linear-gradient(#00CED1,#ffffff);
+	
+		}
+h1   {  font-family:Papyrus,fantasy;
+        text-align:center;
+		font-weight:bold;
+		font-size:2em;
+        margin: 0;
+	
+		}
+#intro {
+        text-align: center;
+        margin: 1.5%;
+        font-size: 1.1em;
+       }
+
+div.row{
+        margin: auto;
+        display:block;
+        width: 50%
+        
+    }
+div.column img{
+        width:75%;
+        height:auto;
+        margin:0;
+        
+    }
+
+  p {
+        font-size:2em;
+        font-weight:bold;
+        text-align:left;
+        margin:0;
+         
+    }		 
+button{
+        background-color:#00CED1;
+        font-family:Papyrus,fantasy;
+        display: block;
+        font-weight:bold;
+        cursor:pointer;
+        font-size:1.4em;
+        color:white;
+        border:none;
+        margin:0 auto;
+        box-shadow: 1px 1px 2px grey;
+      }
+button:hover{ 
+        background-color:orange;
+         }
+div.column{
+        margin: 5px;
+        float:left;
+        width:200px;
+        }
+div.column1{
+        margin: 10px;
+        float:left;
+        width:250px;
+        
+       
+        }
+    
+input[type="radio"] {
+ 
+-webkit-appearance: none;
+-moz-appearance: none;
+      appearance: none;
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      padding: 3px;
+      background-clip: content-box;
+      border: 3px solid #bbb;
+      background-color:aliceblue;
+      border-radius: 50%;
+}
+input[type="radio"]:checked {
+  background-color:blueviolet;
+}
+@media only screen and (max-width: 600px) {
+  #intro {
+      margin: 5%;
+      text-align: left;
+  }
+     
+     

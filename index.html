@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Visual Learning Prototype
+</title>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="project.css"/>
+</head>
+
+<body>
+<div id="home">  
+<h1>Lernen Sie Deutsch!</h1>
+<button id="start" onclick="first()" style="margin-top:3%;">start</button>
+</div>
+<p id="intro">Click on start button to initiate the program. A series of everyday objects will be shown along with their respective pronounciation.<br/> Play the quiz to guess the correct object.</p> 
+     
+<div class="row">
+<div class="column">
+<input class=".regular-radio" type="radio" name="ans" value="" id="ans_one" style="visibility:hidden;">
+<img id="first" style="display:none;"/>
+</div>
+<div class="column">
+<input class=""type="radio" name="ans" value="" id="ans_two" style="visibility:hidden;">
+<img id="sec" style="display:none;"/>
+<p id="caption" style=""></p>    
+<p id="capt2" style=""></p>
+<button id="test"  onclick="startquiz()"style="visibility:hidden;margin:0;">start quiz</button> 
+</div>
+<div class="column">
+<input class="" type="radio" name="ans" value="" id="ans_three" style="visibility:hidden;">    
+<img id="third" style="display:none;"/>
+</div>
+<audio id="sound" preload="auto"></audio>
+<div class="column1">
+<button id="test2"  style="visibility:hidden;margin:0;">check answer</button>
+</div> 
+<div class="column1">
+<button id="quit"  style="visibility:hidden;margin:0;">Exit</button>
+</div>
+</div>
+<script src="project.js"></script>
+</body>
+</html>
