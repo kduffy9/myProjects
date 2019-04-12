@@ -16,47 +16,47 @@
  var imgarr= new Array();
 imgarr[0]={
             image: new Image(),
-			src: "/project/bed.png",
+			src: "bed.png",
 			caption: "Bett"
 			};
 imgarr[1]={
             image: new Image(),
-			src: "/project/dresser.png",
+			src: "dresser.png",
 			caption: "Kommode"
 			};
 imgarr[2]={
             image: new Image(),
-			src: "/project/floor_lamp.png",
+			src: "floor_lamp.png",
 			caption: "Stehlampe"
 			};			
 imgarr[3]={
             image: new Image(),
-			src: "/project/clothes.jpg",
+			src: "clothes.jpg",
 			caption: "Kleider"
 			};
 imgarr[4]={
             image: new Image(),
-			src: "/project/comb.png",
+			src: "comb.png",
 			caption: "Kamm"
 			};	
 imgarr[5]={
             image: new Image(),
-			src: "/project/Wardrobe.png",
+			src: "Wardrobe.png",
 			caption: "Kleiderschrank"
 			};
 imgarr[6]={
             image: new Image(),
-			src: "/project/nightstand.png",
+			src: "nightstand.png",
 			caption: "Nachttisch"
 			};	
 imgarr[7]={
             image: new Image(),
-			src: "/project/pillow.jpg",
+			src: "pillow.jpg",
 			caption: "Kopfkissen"
 			};
 imgarr[8]={
             image: new Image(),
-			src: "/project/blanket.jpg",
+			src: "blanket.jpg",
 			caption: "Decke"
 			};
 var audio= new Audio();
