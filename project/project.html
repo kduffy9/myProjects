@@ -1,0 +1,274 @@
+
+<html lang="en">
+<title>Visual Learning Prototype
+</title>
+<head>
+<meta name="viewport"content="width=device-width ,initial-scale=1.0">
+<style>
+#home { margin-left:15%;
+        margin-top:3%;
+		width:70%;
+		height:20%;
+        padding:0;
+		background:#0277BD;
+		background:-webkit-linear-gradient(#0277BD,#E1F5FE;)
+		background:-o-linear-gradient(#0277BD,#E1F5FE);
+		background:-moz-linear-gradient(#0277BD,#E1F5FE);
+		background:linear-gradient(#00CED1,#ffffff);
+	
+		}
+#footer { margin-left:15%;
+        box-shadow: 1px 1px 2px grey;
+		width:70%;
+		height:16.7%;
+        padding:0;
+		background:#0277BD;
+		background:-webkit-linear-gradient(#E1F5FE,#0277BD;)
+		background:-o-linear-gradient(#E1F5FE,#0277BD);
+		background:-moz-linear-gradient(#E1F5FE,#0277BD);
+		background:linear-gradient(#ffffff,#00CED1);
+		}		
+#quiz{
+      margin-left:30%;
+	  height:50%;
+	  
+	  padding:0.3%;
+	  }
+       
+ul.topnav {
+    width:70%;
+    list-style-type: none;
+    margin-top:0;
+	margin-left:15%;
+    padding: 0;
+    overflow: hidden;
+    background-color: #0277BD;
+  background:-webkit-linear-gradient(left,#0277BD,#E1F5FE);
+	background:-o-linear-gradient(right,#0277BD,#E1F5FE);
+	background:-moz-linear-gradient(right,#0277BD,#E1F5FE);
+	background:linear-gradient(to right,#00CED1,#ffffff);
+	box-shadow: 1px 1px 5px grey;
+	
+}
+
+ul.topnav li {
+    float: left;
+}
+
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul.topnav li a:hover {
+    background-color:orange;
+}
+@media screen and(max-width:600px)
+   { 
+    ul.topnav li a{float:none;}
+   }
+p      {
+         font-size:1.3em;
+         font-weight:bold;
+       }		 
+body   {
+          background-color: #ffffff;
+		  margin:0;
+	      font-size:100%;
+        }	
+h1{     font-family:Papyrus,fantasy;
+        margin-left:35%;
+		font-weight:bold;
+		font-size:1.8em;
+	
+		}		
+ button {
+         background-color:#00CED1;
+		 font-family:Papyrus,fantasy;
+		 
+         font-weight:bold;
+		 cursor:pointer;
+		 font-size:1.5em;
+		 color:white;
+         border:none;
+		 margin-left:45%;
+		 box-shadow: 1px 1px 2px grey;}
+ button:hover{ background-color:orange;}
+#hedgehog{
+          position:relative;
+          
+		  -webkit-animation: mymove 0.5s infinite;
+          animation: mymove 0.5s infinite;
+}
+
+
+@-webkit-keyframes mymove {
+    from {top: 15px;}
+    to {top: 20px;}
+}
+
+@keyframes mymove {
+    from {top: 15px;}
+    to {top: 20px;}
+
+}
+
+</style>
+</head>
+<body>
+
+
+<div id="home">  
+
+ <h1>Let's learn words!<img id="hedgehog" src="/project/hedgehog1.png" align="bottom"
+ width="7%" />
+</h1>
+
+<button id="start1" onclick="first()"style="margin-top:3%;"
+ >start</button>
+
+</div>
+<div id="quiz"><img id="firs" style="width:20%;height:60%;margin-left:15%;display:none;"/>
+<audio id="sound" ></audio>
+<input id="answer" type="text" style="visibility:hidden;margin-left:20%;">
+<p id="caption" style="margin-left:20%;"></p>
+<p id="result" ></p>
+<button id="test"  onclick="startquiz()"style="visibility:hidden;">start quiz</button>
+<button id="test2"  style="visibility:hidden;">check answer</button>
+
+</div>
+<script>
+//1.Save images in an array
+    var imgarr= new Array();
+imgarr[0]={
+            image: new Image(),
+			src: "/project/bed.png",
+			caption: "bed"
+			
+			};
+imgarr[1]={
+            image: new Image(),
+			src: "/project/dresser.png",
+			caption: "dresser"
+			};
+imgarr[2]={
+            image: new Image(),
+			src: "/project/floor_lamp.png",
+			caption: "floor lamp"
+			};			
+imgarr[3]={
+            image: new Image(),
+			src: "/project/clothes.jpg",
+			caption: "clothes"
+			};
+imgarr[4]={
+            image: new Image(),
+			src: "/project/comb.png",
+			caption: "comb"
+			};	
+imgarr[5]={
+            image: new Image(),
+			src: "/project/Wardrobe.png",
+			caption: "wardrobe"
+			};
+imgarr[6]={
+            image: new Image(),
+			src: "/project/Tablelamp.jpg",
+			caption: "table lamp"
+			};	
+imgarr[7]={
+            image: new Image(),
+			src: "/project/nightstand.png",
+			caption: "nightstand"
+			};	
+	var audio= new Audio();
+	var sound= new Array()
+	//put sound clips in an arry for pronunciations  
+sound[0]={src:	
+	"bed.mp3"};
+sound[1]={src:"dresser.mp3"};
+sound[2]={src:"floor_lamp.mp3"};
+sound[3]={src:"clothes.mp3"};
+sound[4]={src:"dresser.mp3"};
+sound[5]={src:"floor_lamp.mp3"};
+sound[6]={src:"bed.mp3"};
+sound[7]={src:"comb.mp3"};
+//recall id "quiz" and "firs" and assign them to display and img respectively 
+ var display=document.getElementById("quiz");
+    var button_1=document.getElementById("test");
+ var img=document.getElementById("firs");
+ // create a new variable and assign value -1 cuz array number start at 0
+ var i=-1;
+ //recall id caption and give new name capt 
+   var capt=document.getElementById("caption");	
+   //recall the button id "start1" and assign it to hideButton
+   var hideButton=document.getElementById("start1");
+   var quiz_num=-1;
+   function first(){
+   // to hide the start button
+  hideButton.style.visibility="hidden";
+   //start increment loop 
+   i++;
+  
+   img.src=imgarr[i].src;
+   audio.src=sound[i].src;
+   img.style.display="block";
+   capt.innerHTML=imgarr[i].caption;
+   audio.volume=0.5;
+   audio.play();
+   console.log(i)
+   //1s time lag between each image
+   timer=setTimeout(first,1000);
+   
+	//stop increment loop because only 3 imgs should be shown in this round
+	if (i>=3+quiz_num){ clearInterval(timer)
+	//recall startquiz button created in html and make it visible
+  
+  button_1.style.visibility="visible";}}
+  
+  function startquiz(){
+      button_1.style.visibility="hidden";
+  //assign "caption" variable to chk and recall textbox id "answer" created in html and assign it to answer variable
+    var chk=document.getElementById("caption")
+	var answer=document.getElementById("answer");
+	var button_2=document.getElementById("test2");
+
+      button_2.style.visibility="visible";
+	var randomage= Math.floor(Math.random()*3);
+	img.src=imgarr[randomage].src;
+	img.style.display="block";
+var result=new Array()
+	result.push(imgarr[randomage].caption);
+	capt.style.visibility="hidden";
+	answer.style.visibility="visible"
+	
+	
+  
+	
+	button_2.onclick=function check(){
+	    answer.value.toLowerCase();
+	if (answer.value==result[0]){
+	   chk.innerHTML="correct";
+        quiz_num =quiz_num+1;
+        console.log(quiz_num)
+        i=0;
+        hideButton.style.visibility="visible";
+	   chk.style.visibility="visible"}
+	   else{
+	   chk.innerHTML="wrong";
+	   chk.style.visibility="visible"
+	   }
+	   
+    console.log(answer.value)
+	console.log(result[0])
+	}
+	}
+	
+	
+</script>
+<footer id="footer" > </footer>
+</body>
+</html>
