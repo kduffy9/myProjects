@@ -20,7 +20,7 @@ div.main{
         margin:100px auto;
         display:block;
         width: 50%;
-        box-shadow: 1px 1px 6px  blue;
+        box-shadow: 1px 1px 6px  green;
          
 }
 #header{
@@ -96,5 +96,12 @@ input[type="text"]:focus {
   background-color:ghostwhite;
 }
 @media only screen and (max-width: 600px) {
-
+div.main{
+        padding:0;
+        margin:10px;
+        display:block;
+        width:100%;
+        box-shadow: 1px 1px 6px  green;
+         
+}
 }
