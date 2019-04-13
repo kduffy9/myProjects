@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<title>Visual Learning Prototype
+</title>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>    
+<link rel="stylesheet" type="text/css" href="toDoList.css"/>
+</head>
+
+<body>
+<div class="main">  
+<div id="header"><h2>My To Do List</h2></div> 
+<div ng-app="toDo" ng-controller="myCtrl" class="body">
+   
+<ol>
+<li ng-repeat="x in lists">{{x}}<span ng-click="remove($index)" class="cross"> x</span>
+</li>
+</ol>
+<input ng-model="addThis" type="text" placeholder="Enter new item"><button ng-click="addToList()" id="add">Add</button> 
+
+<p>{{error}}</p>    
+</div>
+    </div>  
+<script>
+ var app =angular.module("toDo", []);
+    app.controller("myCtrl",function($scope){
+        $scope.lists=["wake up", "get up", "make the bed"];
+        $scope.addToList= function(){
+             $scope.error="";
+         if (!$scope.addThis){
+             return;
+         }
+          if($scope.lists.indexOf($scope.addThis) == -1){      
+            $scope.lists.push($scope.addThis);
+        }
+          else{
+              $scope.error= "Duplicate item!";
+          }
+            }
+        $scope.remove=function(x){
+            $scope.lists.splice(x,1);
+        }
+    });
+</script>
+</body>
+</html>
